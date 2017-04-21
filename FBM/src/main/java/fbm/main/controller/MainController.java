@@ -1,4 +1,4 @@
-package fbm.controller;
+package fbm.main.controller;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -13,14 +13,14 @@ import org.springframework.web.servlet.ModelAndView;
 import fbm.common.common.CommandMap;
 
 @Controller
-public class SampleController {
+public class MainController {
     Logger log = Logger.getLogger(this.getClass());
      
-    @RequestMapping(value="/sample/openSampleList.do")
+    @RequestMapping(value="/")
     public ModelAndView openSampleList(Map<String,Object> commandMap) throws Exception{
-        ModelAndView mv = new ModelAndView("");
+        ModelAndView mv = new ModelAndView("index");
         log.debug("인터셉터 테스트");
-         
+        
         return mv;
     }
     
