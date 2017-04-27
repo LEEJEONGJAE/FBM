@@ -1,0 +1,37 @@
+* MVC Annotation @
+http://www.journaldev.com/3358/spring-requestmapping-requestparam-pathvariable-example
+http://howtodoinjava.com/spring/spring-core/how-to-use-spring-component-repository-service-and-controller-annotations/
+http://noritersand.tistory.com/156
+
+* Spring JsonView
+http://blog.nachal.com/790
+
+* Android StopWatch
+http://gakari.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%ED%95%B8%EB%93%A4%EB%9F%ACHandler%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%8A%A4%ED%86%B1%EC%9B%8C%EC%B9%98-%EB%A7%8C%EB%93%A4%EA%B8%B0
+
+* apache-maven-3.2.2 download url
+https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.2.2/
+
+
+* Git SVN
+http://gasaesososo.tistory.com/13
+https://github.com/LEEJEONGJAE/FBM/
+
+*interceptor
+<!-- JSONObject -->
+<dependency>
+<groupId>org.codehaus.jackson</groupId>
+<artifactId>jackson-mapper-asl</artifactId>
+<version>1.9.13</version>
+</dependency>
+<!-- JSONObject -->
+
+*AES256 Source&Dependency
+http://aramk.tistory.com/32
+https://dukeom.wordpress.com/2013/01/08/aes256-%EC%95%94%ED%98%B8%ED%99%94-java-%EC%83%98%ED%94%8C/
+
+* DB 트리거 로그
+http://www.gurubee.net/article/67207
+
+* Hashtable, HashMap, ConcurrentHashMap 비교
+http://jdm.kr/blog/197
