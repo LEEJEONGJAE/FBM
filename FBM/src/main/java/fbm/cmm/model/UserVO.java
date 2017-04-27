@@ -1,11 +1,11 @@
-package fbm.cmm.dto;
+package fbm.cmm.model;
 
 import java.io.Serializable;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("usrDto")
-public class UserDto implements Serializable{
+@Alias("usrVO")
+public class UserVO implements Serializable{
 	
 	private String id;
 	

@@ -1,9 +1,9 @@
 package fbm.cmm.dao;
 
-import fbm.cmm.dto.UserDto;
+import fbm.cmm.model.UserVO;
 
 public interface UserService {
 	
-	public int login(UserDto usrDto) throws Exception;
+	public int login(UserVO usrVO) throws Exception;
 
 }

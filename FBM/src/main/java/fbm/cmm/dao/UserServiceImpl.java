@@ -3,7 +3,7 @@ package fbm.cmm.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fbm.cmm.dto.UserDto;
+import fbm.cmm.model.UserVO;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -12,9 +12,9 @@ public class UserServiceImpl implements UserService {
 	private UserDao usrDao;
 	
 	@Override
-	public int login(UserDto usrDto) throws Exception {
+	public int login(UserVO usrVO) throws Exception {
 		// TODO Auto-generated method stub
-		return usrDao.login(usrDto);
+		return usrDao.login(usrVO);
 	}
 	
 
