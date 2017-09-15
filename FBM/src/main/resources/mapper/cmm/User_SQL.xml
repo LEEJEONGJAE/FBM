@@ -5,10 +5,32 @@
     
 <mapper namespace="fbm.cmm.dao.UserDao">
 
-	<select id="login" parameterType="fbm.cmm.dto.UserDto" resultType="Integer">
-		SELECT count(id) FROM FBM_USERS
-		WHERE ID = #{id} AND PW = #{pw}
+	<select id="login" parameterType="fbm.cmm.model.UserVO" resultType="Integer">
+		
+		SELECT count(id) 
+		FROM FBM_USERS
+		WHERE ID = #{id} 
+		AND PW = #{pw}
+		
 	</select>
+	
+	<insert id="joinUser" parameterType="fbm.cmm.model.UserVO">
+		
+		INSERT INTO FBM_USER(
+			SEQ, ID, PW
+			, NAME, NICK_NAME
+			, TEAM_ID, CAPTAIN
+			, BACK_NO, MAJOR_LEG
+			, HEIGHT, WEIGHT
+		)VALUES(
+			FBM_USERS_SEQ.NEXTVAL, #{id}, #{pw}
+			, #{name}, #{nick_name}
+			, #{team_id}, #{captain}
+			, #{back_no}, #{major_leg}
+			, #{height}, #{weight}
+		)
+		
+	</insert>
 
 </mapper>    
     

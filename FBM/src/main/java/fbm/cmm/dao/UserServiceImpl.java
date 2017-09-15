@@ -16,6 +16,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return usrDao.login(usrVO);
 	}
+
+	@Override
+	public int joinUser(UserVO usrVO) throws Exception {
+		// TODO Auto-generated method stub
+		return usrDao.joinUser(usrVO);
+	}
 	
 
 }

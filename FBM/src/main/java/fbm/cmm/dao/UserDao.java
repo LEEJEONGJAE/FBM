@@ -12,4 +12,9 @@ public class UserDao extends AbstractDAO{
 		return (Integer) selectOne("login", usrVO);
 	}
 
+	public int joinUser(UserVO usrVO) {
+		// TODO Auto-generated method stub
+		return (Integer) insert("joinUser", usrVO);
+	}
+
 }

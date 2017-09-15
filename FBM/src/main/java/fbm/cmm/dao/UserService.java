@@ -6,4 +6,6 @@ public interface UserService {
 	
 	public int login(UserVO usrVO) throws Exception;
 
+	public int joinUser(UserVO usrVO) throws Exception;
+
 }
