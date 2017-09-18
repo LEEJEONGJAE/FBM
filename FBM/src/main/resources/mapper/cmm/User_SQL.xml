@@ -14,7 +14,7 @@
 		
 	</select>
 	
-	<insert id="joinUser" parameterType="fbm.cmm.model.UserVO">
+	<insert id="registUser" parameterType="fbm.cmm.model.UserVO">
 		
 		INSERT INTO FBM_USER(
 			SEQ, ID, PW

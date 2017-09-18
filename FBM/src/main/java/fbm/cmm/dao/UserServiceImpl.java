@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int joinUser(UserVO usrVO) throws Exception {
+	public int registUser(UserVO usrVO) throws Exception {
 		// TODO Auto-generated method stub
-		return usrDao.joinUser(usrVO);
+		return usrDao.registUser(usrVO);
 	}
 	
 

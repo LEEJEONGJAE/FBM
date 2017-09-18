@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fbm.cmm.dao.SeasonService;
+import fbm.cmm.dao.TeamService;
 import fbm.cmm.dao.UserService;
 import fbm.cmm.model.SeasonVO;
+import fbm.cmm.model.TeamVO;
 import fbm.cmm.model.UserVO;
 import fbm.common.common.CommandMap;
 
@@ -34,8 +36,11 @@ public class MainController {
     @Autowired
     private SeasonService ssService;
     
+    @Autowired
+    private TeamService tmService;
+    
     @RequestMapping(value="/")
-    public ModelAndView openSampleList(Map<String,Object> commandMap) throws Exception{
+    public ModelAndView openSampleList() throws Exception{
         ModelAndView mv = new ModelAndView("home");
 //        ModelAndView mv = new ModelAndView("index");
         log.debug("인터셉터 테스트");
@@ -43,6 +48,11 @@ public class MainController {
         return mv;
     }
     
+    /**
+     * argumentResolver
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value="/sample/testMapArgumentResolver.do")
     public ModelAndView testMapArgumentResolver(CommandMap commandMap) throws Exception{
         ModelAndView mv = new ModelAndView("");
@@ -58,13 +68,19 @@ public class MainController {
         return mv;
     }
     
+    /**
+     * login
+     * @param id
+     * @param pw
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value="/login.do", method=RequestMethod.POST)
-    public ModelAndView login(Map<String,Object> commandMap
-    						  , @RequestParam("id") String id
+    public ModelAndView login(@RequestParam("id") String id
     						  , @RequestParam("pw") String pw) throws Exception{
     	
         log.debug("로그인");
-
+        
         Map<String, Object> resultMap = new HashMap();
         
         UserVO usrVO = new UserVO();
@@ -87,15 +103,20 @@ public class MainController {
         return mv;
     }
     
-    @RequestMapping(value="/joinUser.do", method=RequestMethod.POST)
-    public ModelAndView join(Map<String,Object> commandMap
-    						  , @ModelAttribute UserVO usrVO) throws Exception{
+    /**
+     * registUser
+     * @param usrVO
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value="/registUser.do", method=RequestMethod.POST)
+    public ModelAndView registUser(@ModelAttribute UserVO usrVO) throws Exception{
     	
     	log.debug("회원가입");
     	
     	Map<String, Object> resultMap = new HashMap();
     	
-    	int result = usrService.joinUser(usrVO);
+    	int result = usrService.registUser(usrVO);
     	
     	log.debug("joinUser result : " + result);
     	
@@ -111,12 +132,17 @@ public class MainController {
     	return mv;
     }
     
-    
+    /**
+     * regist season
+     * @param ssVO
+     * @param user_id
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value="/registSeason.do", method=RequestMethod.POST)
-    public ModelAndView registSeason(Map<String,Object> commandMap
-    		, @ModelAttribute SeasonVO ssVO, String user_id) throws Exception{
+    public ModelAndView registSeason(@ModelAttribute SeasonVO ssVO, String user_id) throws Exception{
     	
-    	log.debug("새시즌 등록");
+    	log.debug("신규 시즌 등록");
     	
     	Map<String, Object> resultMap = new HashMap();
     	
@@ -138,11 +164,41 @@ public class MainController {
     	return mv;
     }
     
-    @RequestMapping(value="/getSeasonInfo.do", method=RequestMethod.POST)
-    public ModelAndView getSeasonInfo(Map<String,Object> commandMap
-    		, String season_id, String user_id) throws Exception{
+    
+    @RequestMapping(value="/registTeam.do", method=RequestMethod.POST)
+    public ModelAndView registTeam(@ModelAttribute TeamVO tmVO) throws Exception{
     	
-    	log.debug("새시즌 정보");
+    	log.debug("신규 팀 등록");
+    	
+    	Map<String, Object> resultMap = new HashMap();
+    	
+    	int result = tmService.registTeam(tmVO);
+    	
+    	log.debug("resistTeam result : " + result);
+//    	
+    	if(result == 1){
+    		resultMap.put("result_code", "1");
+    		resultMap.put("result_message", "success");
+    	}else{
+    		resultMap.put("result_code", "0");
+    		resultMap.put("result_message", "fail");
+    	}
+    	ModelAndView mv = new ModelAndView("jsonView", resultMap);
+    	
+    	return mv;
+    }
+    
+    /**
+     * get season information
+     * @param season_id
+     * @param user_id
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value="/getSeasonInfo.do", method=RequestMethod.POST)
+    public ModelAndView getSeasonInfo(String season_id, String user_id) throws Exception{
+    	
+    	log.debug("신규 시즌 정보");
     	
     	Map<String, Object> resultMap = new HashMap();
     	
@@ -154,8 +210,6 @@ public class MainController {
     	SeasonVO ssVO = null;
     	
     	ssVO = ssService.getSeasoninfo(paramSet);
-    	
-    	log.debug("resistSeason result : ");
     	
     	if(ssVO == null){
     		resultMap.put("result_code", "0");
@@ -170,6 +224,18 @@ public class MainController {
     	
     	return mv;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
 }
