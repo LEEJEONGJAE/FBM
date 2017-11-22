@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="fbm.cmm.dao.TeamDao">
+
+	<insert id="registTeam" parameterType="fbm.cmm.model.TeamVO">
+		
+		INSERT INTO TEAM(TEAM_ID, TEAM_NM, SEASON_ID)
+		VALUES(SEQ_TEAM_ID.NEXTVAL, #{team_nm}, #{season_id})
+		
+	</insert>
+	
+	
+</mapper>    
+    
