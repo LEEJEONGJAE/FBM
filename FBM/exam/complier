@@ -1,0 +1,9 @@
+* FIRST, FOLLOW : http://booolean.tistory.com/476
+
+* 단일생성규칙 : 오른쪽에 단 하나의 논터미널기호만 존재하는 것
+
+#### 교재  #####
+* backtracking : 문장을 유도하다가 일치하지 않아서 다른 문법 규칙을 적용하기 위하여 다시 이 전 위치로 돌아가는 현상.
+* left-factoring : 같은 기호들을 prefix로 갖는 2개 이상의 생성규칙이 존재할 경우, 공통된 prefix를 인수분해하는 것
+* left-recursion 문법이 어떤 문자열 α에 대해 A ‗⇒ Aα의 유도과정이 존재하는 경우
+
