@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="fbm.cmm.dao.SeasonDao">
+
+	<insert id="registSeason" parameterType="fbm.cmm.model.SeasonVO">
+		
+		INSERT INTO SEASON(SEASON_ID, SEASON_NM, TOT_GAMES, MANAGER_ID)
+		VALUES(SEQ_SEASON_ID.NEXTVAL, #{season_nm}, #{tot_games}, #{manager_id})
+		
+	</insert>
+	
+	<select id="getSeasonInfo" parameterType="Map" resultType="fbm.cmm.model.SeasonVO">
+		
+		SELECT SEASON_ID, SEASON_NM, TOT_GAMES, MANAGER_ID
+		FROM SEASON
+		WHERE SEASON_ID = #{season_id}
+		AND MANAGER_ID = #{manager_id}
+		
+	</select>
+	
+</mapper>    
+    
