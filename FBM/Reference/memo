@@ -12,6 +12,8 @@ http://gakari.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%E
 * apache-maven-3.2.2 download url
 https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.2.2/
 
+* log4j import error (14,17version error, 16version use)
+https://www.lesstif.com/pages/viewpage.action?pageId=12943410
 
 * Git SVN
 http://gasaesososo.tistory.com/13
@@ -31,23 +33,23 @@ https://github.com/LEEJEONGJAE/FBM/
 http://aramk.tistory.com/32
 https://dukeom.wordpress.com/2013/01/08/aes256-%EC%95%94%ED%98%B8%ED%99%94-java-%EC%83%98%ED%94%8C/
 
-* DB �듃由ш굅 濡쒓렇
+* DB 
 http://www.gurubee.net/article/67207
 
-* Hashtable, HashMap, ConcurrentHashMap 鍮꾧탳
+* Hashtable, HashMap, ConcurrentHashMap
 http://jdm.kr/blog/197
 
-*Spring 怨듯넻紐⑤뱢
+*Spring 
 
--- Validation Check �꽕�젙
+-- Validation Check 
 http://wiki.gurubee.net/pages/viewpage.action?pageId=12189867
 http://appsnuri.tistory.com/115
-(�븞�뱶濡쒖씠�뱶) http://jojoldu.tistory.com/129
+() http://jojoldu.tistory.com/129
 
--- paging �꽕�젙
+-- paging 
 http://handcoding.tistory.com/15
 
-*각종 참고 사이트
+*
 http://handcoding.tistory.com/22
 
 
